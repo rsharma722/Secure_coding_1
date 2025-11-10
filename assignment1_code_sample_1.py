@@ -37,7 +37,7 @@ def send_email(to, subject, body):
 def get_data():
     url = "https://secure-api.example.com/get-data"
     req = Request(url, headers={"User-Agent": "secure-demo"})
-    with urlopen(req, timeout=10, context=ssl.create_default_context()) as r:
+    with urlopen(req, timeout=10) as r:
         return r.read().decode("utf-8", "replace")
 
 def save_to_db(data):
